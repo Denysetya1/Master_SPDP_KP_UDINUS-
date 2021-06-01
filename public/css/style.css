@@ -1,0 +1,745 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+#particles-js
+{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #7bb8d2;
+    opacity: 0.5;
+}
+
+.text {
+    top: 20%;
+    left: 0px;
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    font-family: 'Oswald', sans-serif;
+    line-height: 60px;
+    z-index: 100;
+  }
+  .text span {
+    color: #fff;
+    font-size: 16vw;
+    font-weight: bold;
+    display: inline-block;
+    letter-spacing: 5px;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    text-shadow: 0px 0px 0px #1b6c92;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    cursor: default;
+  }
+  .text span:hover {
+    text-shadow: -8px 8px 0px #1b6c92;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    top: -8px;
+    left: 8px;
+  }
+  .text span.space {
+    width: 20px;
+    height: 100%;
+  }
+
+  @media (min-width: 414px) {
+    .text span {
+        font-size: 50px;
+      }
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #2c3e50;
+    background-image: none;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: flex;
+    height: 4em;
+    line-height: 4;
+    background: #2c3e50;
+    overflow: hidden;
+    border-radius: .75em;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #34495e;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: #f39c12;
+  }
+
+.boxs {
+  width: 320px;
+  height: 200px;
+  background: #fff;
+  border-radius: 8px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.loader {
+  height: 100%;
+  position: absolute;
+  /* margin: auto; */
+  z-index: 19;
+  width: 100%;
+}
+.loader_overlay {
+  width: 150px;
+  height: 150px;
+  background: transparent;
+  box-shadow: 0px 0px 0px auto rgba(255, 255, 255, 0.67), 0px 0px 19px 0px rgba(0, 0, 0, 0.16) inset;
+  border-radius: 100%;
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.loader_cogs {
+  z-index: -2;
+  width: 100px;
+  height: 100px;
+  top: -120px !important;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.loader_cogs__top {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  -webkit-transform-origin: 50px 50px;
+          transform-origin: 50px 50px;
+  -webkit-animation: rotate 10s infinite linear;
+          animation: rotate 10s infinite linear;
+}
+.loader_cogs__top div:nth-of-type(1) {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+.loader_cogs__top div:nth-of-type(2) {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+.loader_cogs__top div:nth-of-type(3) {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.loader_cogs__top div.top_part {
+  width: 100px;
+  border-radius: 10px;
+  position: absolute;
+  height: 100px;
+  background: #f98db9;
+}
+.loader_cogs__top div.top_hole {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  background: white;
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.loader_cogs__left {
+  position: relative;
+  width: 80px;
+  -webkit-transform: rotate(16deg);
+          transform: rotate(16deg);
+  top: 28px;
+  -webkit-transform-origin: 40px 40px;
+          transform-origin: 40px 40px;
+  animation: rotate_left 10s .1s infinite reverse linear;
+  left: -24px;
+  height: 80px;
+}
+.loader_cogs__left div:nth-of-type(1) {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+.loader_cogs__left div:nth-of-type(2) {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+.loader_cogs__left div:nth-of-type(3) {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.loader_cogs__left div.left_part {
+  width: 80px;
+  border-radius: 6px;
+  position: absolute;
+  height: 80px;
+  background: #97ddff;
+}
+.loader_cogs__left div.left_hole {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background: white;
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+.loader_cogs__bottom {
+  position: relative;
+  width: 60px;
+  top: -65px;
+  -webkit-transform-origin: 30px 30px;
+          transform-origin: 30px 30px;
+  -webkit-animation: rotate_left 10.2s .4s infinite linear;
+          animation: rotate_left 10.2s .4s infinite linear;
+  -webkit-transform: rotate(4deg);
+          transform: rotate(4deg);
+  left: 79px;
+  height: 60px;
+}
+.loader_cogs__bottom div:nth-of-type(1) {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+.loader_cogs__bottom div:nth-of-type(2) {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+.loader_cogs__bottom div:nth-of-type(3) {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+.loader_cogs__bottom div.bottom_part {
+  width: 60px;
+  border-radius: 5px;
+  position: absolute;
+  height: 60px;
+  background: #ffcd66;
+}
+.loader_cogs__bottom div.bottom_hole {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background: white;
+  position: absolute;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* Animations */
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate_left {
+  from {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+  to {
+    -webkit-transform: rotate(376deg);
+            transform: rotate(376deg);
+  }
+}
+@keyframes rotate_left {
+  from {
+    -webkit-transform: rotate(16deg);
+            transform: rotate(16deg);
+  }
+  to {
+    -webkit-transform: rotate(376deg);
+            transform: rotate(376deg);
+  }
+}
+@-webkit-keyframes rotate_right {
+  from {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  to {
+    -webkit-transform: rotate(364deg);
+            transform: rotate(364deg);
+  }
+}
+@keyframes rotate_right {
+  from {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  to {
+    -webkit-transform: rotate(364deg);
+            transform: rotate(364deg);
+  }
+}
+.exp {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  .exp .checkbox {
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .ket{
+      margin: 0;
+      width: fit-content;
+  }
+  .bunder {
+    display: inline-block;
+    color: rgb(182, 182, 182);
+    cursor: pointer;
+    position: relative;
+  }
+  .bunder span {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    transform-origin: center;
+    border: 2px solid rgb(182, 182, 182);
+    border-radius: 50%;
+    vertical-align: -6px;
+    margin-right: 10px;
+    transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+  }
+  .bunder span {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    width: 25px;
+    height: 25px;
+    transform-origin: center;
+    border: 2px solid rgb(182, 182, 182);
+    border-radius: 50%;
+    vertical-align: -6px;
+    margin-right: 10px;
+    transition: background-color 150ms 200ms, transform 350ms cubic-bezier(0.78, -1.22, 0.17, 1.89);
+  }
+  .bunder span:before {
+    content: "";
+    width: 0px;
+    height: 2px;
+    border-radius: 2px;
+    background: rgb(182, 182, 182);
+    position: absolute;
+    transform: rotate(45deg);
+    top: 11px;
+    left: 7px;
+    transition: width 50ms ease 50ms;
+    transform-origin: 0% 0%;
+  }
+  .bunder span:after {
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: rgb(182, 182, 182);
+    position: absolute;
+    transform: rotate(305deg);
+    top: 14px;
+    left: 8px;
+    transition: width 50ms ease;
+    transform-origin: 0% 0%;
+  }
+  .bunder:hover span:before {
+    width: 5px;
+    transition: width 100ms ease;
+  }
+  .bunder:hover span:after {
+    width: 10px;
+    transition: width 150ms ease 100ms;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked + label span {
+    background-color: rgb(182, 182, 182);
+    transform: scale(1.25);
+  }
+  input[type="checkbox"]:checked + label span:after {
+    width: 10px;
+    background: #1790b5;
+    transition: width 150ms ease 100ms;
+  }
+  input[type="checkbox"]:checked + label span:before {
+    width: 5px;
+    background: #1790b5;
+    transition: width 150ms ease 100ms;
+  }
+  input[type="checkbox"]:checked + label:hover span {
+    background-color: rgb(182, 182, 182);
+    transform: scale(1.25);
+  }
+  input[type="checkbox"]:checked + label:hover span:after {
+    width: 10px;
+    background: #1790b5;
+    transition: width 150ms ease 100ms;
+  }
+  input[type="checkbox"]:checked + label:hover span:before {
+    width: 5px;
+    background: #1790b5;
+    transition: width 150ms ease 100ms;
+  }
+
+  .input-file {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .input-file + .js-labelFile {
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 10px;
+    cursor: pointer;
+  }
+  .input-file + .js-labelFile .icon:before {
+    content: "\f093";
+  }
+  .input-file + .js-labelFile.has-file .icon:before {
+    content: "\f00c";
+    color: #5AAC7B;
+  }
+
+  #loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    overflow: hidden;
+  }
+  .no-js #loader-wrapper {
+    display: none;
+  }
+
+  #loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #16a085;
+    -webkit-animation: spin 1.7s linear infinite;
+            animation: spin 1.7s linear infinite;
+    z-index: 11;
+  }
+  #loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #e74c3c;
+    -webkit-animation: spin-reverse .6s linear infinite;
+            animation: spin-reverse .6s linear infinite;
+  }
+  #loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #f9c922;
+    -webkit-animation: spin 1s linear infinite;
+            animation: spin 1s linear infinite;
+  }
+
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin-reverse {
+    0% {
+      -webkit-transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(-360deg);
+    }
+  }
+  @keyframes spin-reverse {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+    100% {
+      -webkit-transform: rotate(-360deg);
+      transform: rotate(-360deg);
+    }
+  }
+  #loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #e2e8f0;
+    /* background: rgb(184, 184, 184); */
+    z-index: 10;
+  }
+
+  #loader-wrapper .loader-section.section-left {
+    left: 0;
+  }
+
+  #loader-wrapper .loader-section.section-right {
+    right: 0;
+  }
+
+  /* Loaded styles */
+  .loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+  }
+
+  .loaded #loader-wrapper {
+    visibility: hidden;
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+    -webkit-transition: all 0.3s 1s ease-out;
+    transition: all 0.3s 1s ease-out;
+  }
+
+  a.lightbox img {
+    /* height: 150px; */
+    border: 3px solid white;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+    /* margin: 94px 20px 20px 20px; */
+    }
+
+    /* Styles the lightbox, removes it from sight and adds the fade-in transition */
+
+    .lightbox-target {
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    background: rgba(0,0,0,.7);
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity .5s ease-in-out;
+    -moz-transition: opacity .5s ease-in-out;
+    -o-transition: opacity .5s ease-in-out;
+    transition: opacity .5s ease-in-out;
+    overflow: hidden;
+    z-index: 5;
+    }
+
+    /* Styles the lightbox image, centers it vertically and horizontally, adds the zoom-in transition and makes it responsive using a combination of margin and absolute positioning */
+
+    .lightbox-target img {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left:0;
+    right:0;
+    bottom: 0;
+    max-height: 0%;
+    max-width: 0%;
+    border: 3px solid white;
+    box-shadow: 0px 0px 8px rgba(0,0,0,.3);
+    box-sizing: border-box;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    }
+
+    /* Styles the close link, adds the slide down transition */
+
+    a.lightbox-close {
+    display: block;
+    width:50px;
+    height:50px;
+    box-sizing: border-box;
+    background: white;
+    color: black;
+    text-decoration: none;
+    position: absolute;
+    top: -80px;
+    right: 0;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    }
+
+    /* Provides part of the "X" to eliminate an image from the close link */
+
+    a.lightbox-close:before {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: black;
+    position: absolute;
+    left: 26px;
+    top:10px;
+    -webkit-transform:rotate(45deg);
+    -moz-transform:rotate(45deg);
+    -o-transform:rotate(45deg);
+    transform:rotate(45deg);
+    }
+
+    /* Provides part of the "X" to eliminate an image from the close link */
+
+    a.lightbox-close:after {
+    content: "";
+    display: block;
+    height: 30px;
+    width: 1px;
+    background: black;
+    position: absolute;
+    left: 26px;
+    top:10px;
+    -webkit-transform:rotate(-45deg);
+    -moz-transform:rotate(-45deg);
+    -o-transform:rotate(-45deg);
+    transform:rotate(-45deg);
+    }
+
+    /* Uses the :target pseudo-class to perform the animations upon clicking the .lightbox-target anchor */
+
+    .lightbox-target:target {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    }
+
+    .lightbox-target:target img {
+    max-height: 100%;
+    max-width: 100%;
+    }
+
+    .lightbox-target:target a.lightbox-close {
+    top: 0px;
+    }
+
+    .image-zoom-available{
+        cursor: zoom-in;
+      }
+      .image-zoom-available.is-active{
+        cursor: none;
+      }
